@@ -11,6 +11,8 @@ import CategoriesBox from "../components/CategoriesBox.js";
 
 var containers = $(".drag-container").toArray();
 
+//Test
+
 dragula(containers, {
   isContainer: function (el) {
     return el.classList.contains("drag-container");
