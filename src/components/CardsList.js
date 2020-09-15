@@ -73,7 +73,7 @@ const CardItem = ({ title }) => (
     className="my-2 ml-3 mr-2 text-center shadow-sm justify-content-center"
     style={{
       height: "5%",
-      width: "90%",
+      width: "85%",
       cursor: "pointer",
       backgroundColor: "#FFCDB2",
       color: "#6D6875",
