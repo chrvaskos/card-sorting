@@ -62,13 +62,13 @@ const CategoryItem = () => (
     >
       <div className="row">
         <Card.Header style={{ backgroundColor: "#B5838D", width: "14em" }}>
-          <text
+          <div
             className="text-uppercase"
             contentEditable="true"
             style={{ color: "#FFCDB2", fontSize: "18px", fontWeight: "bold" }}
           >
-            Click to edit!
-          </text>
+            Νεα Κατηγορια
+          </div>
         </Card.Header>
         <Accordion.Toggle
           as={Button}
