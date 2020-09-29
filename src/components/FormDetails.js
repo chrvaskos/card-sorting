@@ -4,6 +4,9 @@ import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import { Icon } from "react-icons-kit";
 import { camera } from "react-icons-kit/fa/camera";
+import { play } from "react-icons-kit/fa/play";
+import { pause as pauseIcon } from "react-icons-kit/fa/pause";
+import Timer from "react-compound-timer";
 
 class FormDetails extends Component {
   capturePage = () => {
@@ -16,14 +19,9 @@ class FormDetails extends Component {
   render() {
     return (
       <Row className="mx-0">
-        <Col xs="12" lg="3">
+        <Col xs="12" lg="5">
           <div class="textbox">
-            <input type="text" placeholder="Όνομα" />
-          </div>
-        </Col>
-        <Col xs="12" lg="3">
-          <div class="textbox">
-            <input type="text" placeholder="Επώνυμο" />
+            <input type="text" placeholder="Ονοματεπώνυμο" />
           </div>
         </Col>
         <Col xs="3" lg="2">
@@ -32,16 +30,40 @@ class FormDetails extends Component {
           </div>
         </Col>
         <Col xs="7" lg="3">
-          <div class="textbox">
-            <input type="text" placeholder="Ασχολία" />
-          </div>
+          <Timer
+            startImmediately={false}
+            formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
+          >
+            {({ start, pause }) => (
+              <React.Fragment >
+                <div className="timer mx-5">
+                  <Timer.Minutes />:
+                  <Timer.Seconds />
+                  <Icon
+                    as="button"
+                    onClick={start}
+                    className="mt-2 ml-3 p-2 iconButton"
+                    size={30}
+                    icon={play}
+                    style={{ color: "#e5989b", cursor: "pointer" }}
+                  />
+                  <Icon
+                    as="button"
+                    onClick={pause}
+                    className="mt-3 ml-1 p-2 iconButton"
+                    size={30}
+                    icon={pauseIcon}
+                    style={{ color: "#e5989b", cursor: "pointer" }}
+                  />
+                </div>
+              </React.Fragment>
+            )}
+          </Timer>
         </Col>
         <Col xs="2" lg="1">
           <OverlayTrigger
             placement="bottom"
-            overlay={
-              <Tooltip id="button-tooltip-2">Check out this avatar</Tooltip>
-            }
+            overlay={<Tooltip id="button-tooltip-2">Take a screenshot</Tooltip>}
           >
             {({ ref, ...triggerHandler }) => (
               <Icon
@@ -49,8 +71,8 @@ class FormDetails extends Component {
                 onClick={this.capturePage}
                 {...triggerHandler}
                 ref={ref}
-                className="mt-3 ml-3"
-                size={36}
+                className="mt-3 ml-3 p-2 iconButton"
+                size={32}
                 icon={camera}
                 style={{ color: "#e5989b", cursor: "pointer" }}
               />
