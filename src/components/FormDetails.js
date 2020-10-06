@@ -24,12 +24,12 @@ class FormDetails extends Component {
             <input type="text" placeholder="Ονοματεπώνυμο" />
           </div>
         </Col>
-        <Col xs="3" lg="2">
+        <Col xs="2" lg="2">
           <div class="textbox">
             <input type="text" placeholder="Ηλικία" />
           </div>
         </Col>
-        <Col xs="6" lg="3">
+        <Col xs="8" lg="3">
           <Timer
             startImmediately={false}
             formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
