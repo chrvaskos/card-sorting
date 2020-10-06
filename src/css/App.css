@@ -27,7 +27,80 @@
   float: left;
   font-weight: bold;
 }
+
 .iconButton:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 30px;
+}
+
+.tooltip-icon {
+  font-size: 40px;
+  margin: 0 0.75em 0.5em 0;
+  color: #e5989b;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  padding: 0;
+}
+
+.tooltip-icon:hover {
+  font-size: 42px;
+  margin-right: 0.71em;
+}
+
+.tooltip-icon svg {
+}
+
+.tooltip-icon .tooltip-text {
+  font-size: 16px;
+  visibility: hidden;
+  width: 80vw;
+  height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-right: 20em;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: left;
+  padding: 12px;
+  border-radius: 10px;
+  z-index: 1;
+  position: absolute;
+  bottom: 100%;
+  right: -650%;
+}
+
+@media only screen and (min-width: 600px) {
+  .tooltip-icon .tooltip-text {
+    width: 60vw;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .tooltip-icon .tooltip-text {
+    width: 45vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .tooltip-icon .tooltip-text {
+    width: 30vw;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (min-height: 900px) {
+  .tooltip-icon .tooltip-text {
+    overflow-y: hidden;
+  }
+}
+
+.tooltip-icon:hover .tooltip-text {
+  visibility: visible;
+}
+
+.highlighted-text {
+  padding: 0;
+  margin: 0;
+  color: #e5989b;
 }

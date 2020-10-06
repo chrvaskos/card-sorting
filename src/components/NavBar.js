@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Icon } from "react-icons-kit";
 import { sort } from "react-icons-kit/fa/sort";
+import { infoCircle } from "react-icons-kit/fa/infoCircle";
 import { Navbar } from "react-bootstrap";
 import "../css/App.css";
 
