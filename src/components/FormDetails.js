@@ -29,7 +29,7 @@ class FormDetails extends Component {
             <input type="text" placeholder="Ηλικία" />
           </div>
         </Col>
-        <Col xs="7" lg="3">
+        <Col xs="6" lg="3">
           <Timer
             startImmediately={false}
             formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
