@@ -19,31 +19,31 @@ class FormDetails extends Component {
   render() {
     return (
       <Row className="mx-0">
-        <Col xs="12" lg="5">
+        <Col xs="9" lg="5">
           <div class="textbox">
             <input type="text" placeholder="Ονοματεπώνυμο" />
           </div>
         </Col>
-        <Col xs="2" lg="2">
+        <Col xs="3" lg="2">
           <div class="textbox">
             <input type="text" placeholder="Ηλικία" />
           </div>
         </Col>
-        <Col xs="8" lg="3">
+        <Col xs="9" lg="3">
           <Timer
             startImmediately={false}
             formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
           >
             {({ start, pause }) => (
               <React.Fragment >
-                <div className="timer mx-5">
+                <div className="timer mx-2 mx-md-5">
                   <Timer.Minutes />:
                   <Timer.Seconds />
                   <Icon
                     as="button"
                     onClick={start}
                     className="mt-2 ml-3 p-2 iconButton"
-                    size={30}
+                    size={28}
                     icon={play}
                     style={{ color: "#e5989b", cursor: "pointer" }}
                   />
@@ -51,7 +51,7 @@ class FormDetails extends Component {
                     as="button"
                     onClick={pause}
                     className="mt-3 ml-1 p-2 iconButton"
-                    size={30}
+                    size={28}
                     icon={pauseIcon}
                     style={{ color: "#e5989b", cursor: "pointer" }}
                   />
@@ -60,7 +60,7 @@ class FormDetails extends Component {
             )}
           </Timer>
         </Col>
-        <Col xs="2" lg="1">
+        <Col xs="3" lg="1">
           <OverlayTrigger
             placement="bottom"
             overlay={<Tooltip id="button-tooltip-2">Take a screenshot</Tooltip>}
@@ -71,7 +71,7 @@ class FormDetails extends Component {
                 onClick={this.capturePage}
                 {...triggerHandler}
                 ref={ref}
-                className="mt-3 ml-3 p-2 iconButton"
+                className="mt-3 ml-md-3 p-2 iconButton"
                 size={32}
                 icon={camera}
                 style={{ color: "#e5989b", cursor: "pointer" }}
